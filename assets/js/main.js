@@ -12,7 +12,6 @@ alert(userInfo);
 let someNumber = prompt('Enter the number');
 someNumber = String(someNumber);
 let result = someNumber.split('').join(' ');
-
 alert(result)
 
 
