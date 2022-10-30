@@ -1,4 +1,5 @@
 const hoursInput = +prompt('Enter an hour you want to convert into seconds');
+
 const hoursToSec = (hoursInput * 60) *60;
 alert(`You have ${hoursToSec} in ${hoursInput} hours`)
 

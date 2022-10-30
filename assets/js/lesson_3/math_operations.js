@@ -1,6 +1,7 @@
 const firstInt = +prompt('Enter first number');
 const secondInt = +prompt('Enter second number');
 
+
 const add = firstInt + secondInt;
 const sub = firstInt - secondInt;
 const mult = firstInt * secondInt;
