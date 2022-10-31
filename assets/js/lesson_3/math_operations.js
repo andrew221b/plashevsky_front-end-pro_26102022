@@ -11,4 +11,3 @@ if (!isNaN(firstInt) && !isNaN(secondInt)) {
     
     alert(result);
 } else (alert("You've entered invalid value"))
-

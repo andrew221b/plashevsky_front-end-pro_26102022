@@ -20,7 +20,6 @@ if (userAction === 'add' || userAction === 'sub' || userAction === 'mult' || use
         } else (alert(`${firstNum}/${secondNum}=${div}`));
     } else (alert("You've entered invalid value"))
 
-   
 } else {
     alert("You've entered invalid request. Please try again")
 }
