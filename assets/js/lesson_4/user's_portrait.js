@@ -9,7 +9,7 @@ let userDateInput;
 
 while (isNaN(userDateInput) || userDateInput >= 2022) {
     userDateInput = Number(prompt(`What is your birth date? \n
-Leave 0 if you don't want tell us your birth date`, 0));
+ Leave 0 if you don't want tell us your birth date`, 0));
 }
 
 if (userDateInput === 0) {
@@ -20,17 +20,16 @@ if (userDateInput === 0) {
 //Get user's city
 
 let userCityInput = prompt(`Which city do you live? \n
-Leave this field empty if you don't want tell us where do you live`);
+ Leave this field empty if you don't want tell us where do you live`);
 
 do {
     if (isNaN(userCityInput) || userCityInput === "") {
         break
     } else {
         userCityInput = prompt(`You've entered invalid value. Please try again. \n
-Which city do you live? \n
-Leave this field empty if you don't want tell us where do you live`);
+ Which city do you live? \n
+ Leave this field empty if you don't want tell us where do you live`);
     }
-
 } while (!isNaN(userCityInput));
 
 if (userCityInput === "") {
