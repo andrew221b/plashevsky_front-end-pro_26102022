@@ -61,10 +61,11 @@ if (userFavSportInput === "") {
 //Calc age
 
 let userAgeResult;
-const currentDate = new Date().getFullYear();
-const userAgeCalc = currentDate - userDateInput;
+
 
 if ((userDateInput !== 0)) {
+    const currentDate = new Date().getFullYear();
+    const userAgeCalc = currentDate - userDateInput;
     userAgeResult = `You're ${userAgeCalc} old`
 } else (userAgeResult = "You didn't add age")
 
