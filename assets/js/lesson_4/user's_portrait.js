@@ -98,7 +98,7 @@ if (userFavSportInput === 'Basketball') {
 } else if (userFavSportInput === 'Footbal') {
     userFavSportResult = 'Cool! Wanna be as good as David Beckham?'
 } else if (userFavSportInput) {
-    userFavSportResult = `You live in ${userFavSportInput}`
+    userFavSportResult = `Your fav sport is ${userFavSportInput}`
 }
 else {
     userFavSportResult = "You didn't add your fav sport"
@@ -128,7 +128,7 @@ do {
         case null:
         case "":
             alert("You chose not to mention your age")
-            birthDate = ""
+            birthDateResult = ""
             break;
         default:
             const currentDate = new Date().getFullYear();
@@ -204,11 +204,15 @@ do {
 } while (Number(whichSport))
 
 
-// Here I tried to check if all arrays is empty and show final message.
+// Here I tried to check if all arrays is equal "" and show final message.
 
 const finalResultArr = [birthDateResult, whichCityResult, whichSportResult];
 
-if (finalResultArr.includes(undefined || "")) {
+function allEmpty() {
+    return finalResultArr.every(element => element === "")
+}
+
+if (allEmpty(finalResultArr)) {
     alert("You didn't add any info")
 } else (
     alert(finalResultArr.join("\n"))
