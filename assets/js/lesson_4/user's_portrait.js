@@ -46,7 +46,6 @@ while (!valid) {
     } else (valid = true)
 }
 
-
 //Get user's fav sport
 
 let userFavSportInput = prompt(
@@ -66,7 +65,6 @@ while (!valid) {
     } else (valid = true)
 }
 
-
 //Calc age
 
 let userAgeResult;
@@ -77,8 +75,6 @@ if ((userDateInput !== 0)) {
     userAgeResult = `You're ${userAgeCalc} old`
 } else (userAgeResult = "You didn't add age")
 
-console.log(userDateInput)
-console.log(typeof userDateInput)
 // Check capitals
 
 let userCityResult;
@@ -95,7 +91,6 @@ if (userCityInput === 'Kyiv') {
 else {
     userCityResult = "You didn't add your city"
 }
-
 
 // Check fav sport
 
@@ -114,13 +109,11 @@ else {
     userFavSportResult = "You didn't add your fav sport"
 }
 
-
 // Show information
 
 const finalInfo = [userAgeResult, userCityResult, userFavSportResult]
 
 alert(finalInfo.join("\n"))
-
 
 
 /**
@@ -148,7 +141,6 @@ do {
             birthDateResult = `You're ${birthDate} years old`
     }
 } while (isNaN(birthDate))
-
 
 // Get city
 
@@ -182,7 +174,6 @@ do {
     }
 } while (Number(whichCity))
 
-
 // Get fav sport
 
 let whichSport;
@@ -215,7 +206,6 @@ do {
     }
 } while (Number(whichSport))
 
-
 // Here I tried to check if all arrays is equal "" and show final message.
 
 const finalResultArr = [birthDateResult, whichCityResult, whichSportResult];
@@ -229,11 +219,3 @@ if (allEmpty(finalResultArr)) {
 } else (
     alert(finalResultArr.join("\n"))
 )
-
-
-
-
-
-
-
-
