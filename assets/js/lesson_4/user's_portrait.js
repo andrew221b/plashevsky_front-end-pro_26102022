@@ -1,43 +1,49 @@
-/**
- * I know made solution much more complicated then it should be, 
- * but I tried to add more checks, though.
- * If I had more time, I've found more complex solution, maybe :)
- */
+// /**
+//  * I know made solution much more complicated then it should be, 
+//  * but I tried to add more checks, though. (I know it's too soon to use while loop)
+//  * If I had more time, I've found more complex solution, maybe :)
+//  */
+
+//Add this variable for check
+
+let valid = false
 
 //Get user birth date.
 
-let userDateInput;
-
-while (isNaN(userDateInput) || userDateInput >= 2022) {
-    userDateInput = Number(prompt
+let userDateInput = Number(prompt
     (`What is your birth date? \n
-      Leave 0 if you don't want tell us your birth date`, 0));
-}
+Leave 0 if you don't want tell us your birth date`, 0));
 
-if (userDateInput === 0) {
-    alert("What a pity, you didn't add your birth date!")
+while (!valid) {
+    if (isNaN(userDateInput) || userDateInput >= 2022) {
+        userDateInput = Number(prompt(
+            `You've entered invalid value. Please try again. \n
+        What is your birth date \n
+        Leave o if you don't want tell us your age`, 0));
+    }
+        else if (userDateInput === 0) {
+        alert("What a pity, you didn't add your age!")
+        valid = true
+    } else (valid = true)
 }
-
 
 //Get user's city
 
 let userCityInput = prompt(
     `Which city do you live? \n
-     Leave this field empty if you don't want tell us where do you live`);
+Leave this field empty if you don't want tell us where do you live`);
 
-do {
-    if (isNaN(userCityInput) || userCityInput === "") {
-        break
-    } else {
+while (!valid) {
+    if (Number(userCityInput)) {
         userCityInput = prompt(
-    `You've entered invalid value. Please try again. \n
-     Which city do you live? \n
-     Leave this field empty if you don't want tell us where do you live`);
+            `You've entered invalid value. Please try again. \n
+        Which city do you live? \n
+        Leave this field empty if you don't want tell us where do you live`);
     }
-} while (!isNaN(userCityInput));
-
-if (userCityInput === "") {
-    alert("What a pity, you didn't add your city!")
+        else if (userCityInput === "" || userCityInput === null) {
+        alert("What a pity, you didn't add your city!")
+        valid = true
+    } else (valid = true)
 }
 
 
@@ -45,21 +51,19 @@ if (userCityInput === "") {
 
 let userFavSportInput = prompt(
     `What is you fav sport game? \n
-     Leave this field empty if you don't want tell what's your fav sport`);
+Leave this field empty if you don't want tell what's your fav sport`);
 
-do {
-    if (isNaN(userFavSportInput) || userFavSportInput === "") {
-        break
-    } else {
+while (!valid) {
+    if (Number(userFavSportInput)) {
         userFavSportInput = prompt(
-    `You've entered invalid value. Please try again. \n
-     What is you fav sport game? \n
-     Leave this field empty if you don't want tell what's your fav sport`);
+            `You've entered invalid value. Please try again. \n
+        What is you fav sport game? \n
+        Leave this field empty if you don't want tell what's your fav sport`);
     }
-} while (!isNaN(userFavSportInput));
-
-if (userFavSportInput === "") {
-    alert("What a pity, you didn't add your fav sport!")
+        else if (userFavSportInput === "" || userFavSportInput === null) {
+        alert("What a pity, you didn't add your fav sport!")
+        valid = true
+    } else (valid = true)
 }
 
 
@@ -73,7 +77,8 @@ if ((userDateInput !== 0)) {
     userAgeResult = `You're ${userAgeCalc} old`
 } else (userAgeResult = "You didn't add age")
 
-
+console.log(userDateInput)
+console.log(typeof userDateInput)
 // Check capitals
 
 let userCityResult;
@@ -100,7 +105,7 @@ if (userFavSportInput === 'Basketball') {
     userFavSportResult = 'Cool! Wanna be as good as Michael Jordan?'
 } else if (userFavSportInput === 'Box') {
     userFavSportResult = 'Cool! Wanna be as good as Muhammad Ali?'
-} else if (userFavSportInput === 'Footbal') {
+} else if (userFavSportInput === 'Football') {
     userFavSportResult = 'Cool! Wanna be as good as David Beckham?'
 } else if (userFavSportInput) {
     userFavSportResult = `Your fav sport is ${userFavSportInput}`
@@ -118,7 +123,10 @@ alert(finalInfo.join("\n"))
 
 
 
-// Also I tried another way with 'switch'. Don't know maybe neither are correct :)
+/**
+ * Also I tried another way with 'switch'. Don't know maybe neither are correct :)
+ * Here I use do...while loop. 
+ * */ 
 
 // Get birth date
 
@@ -126,7 +134,6 @@ let birthDate;
 let birthDateResult;
 
 do {
-
     birthDate = prompt('What is your birth date?')
 
     switch (birthDate) {
