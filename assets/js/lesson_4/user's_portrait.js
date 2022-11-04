@@ -1,15 +1,17 @@
 /**
- * Get user birth date.
  * I know made solution much more complicated then it should be, 
  * but I tried to add more checks, though.
  * If I had more time, I've found more complex solution, maybe :)
  */
 
+//Get user birth date.
+
 let userDateInput;
 
 while (isNaN(userDateInput) || userDateInput >= 2022) {
-    userDateInput = Number(prompt(`What is your birth date? \n
- Leave 0 if you don't want tell us your birth date`, 0));
+    userDateInput = Number(prompt
+    (`What is your birth date? \n
+      Leave 0 if you don't want tell us your birth date`, 0));
 }
 
 if (userDateInput === 0) {
@@ -19,16 +21,18 @@ if (userDateInput === 0) {
 
 //Get user's city
 
-let userCityInput = prompt(`Which city do you live? \n
- Leave this field empty if you don't want tell us where do you live`);
+let userCityInput = prompt(
+    `Which city do you live? \n
+     Leave this field empty if you don't want tell us where do you live`);
 
 do {
     if (isNaN(userCityInput) || userCityInput === "") {
         break
     } else {
-        userCityInput = prompt(`You've entered invalid value. Please try again. \n
- Which city do you live? \n
- Leave this field empty if you don't want tell us where do you live`);
+        userCityInput = prompt(
+    `You've entered invalid value. Please try again. \n
+     Which city do you live? \n
+     Leave this field empty if you don't want tell us where do you live`);
     }
 } while (!isNaN(userCityInput));
 
@@ -39,18 +43,19 @@ if (userCityInput === "") {
 
 //Get user's fav sport
 
-let userFavSportInput = prompt(`What is you fav sport game? \n
-Leave this field empty if you don't want tell what's your fav sport`);
+let userFavSportInput = prompt(
+    `What is you fav sport game? \n
+     Leave this field empty if you don't want tell what's your fav sport`);
 
 do {
     if (isNaN(userFavSportInput) || userFavSportInput === "") {
         break
     } else {
-        userFavSportInput = prompt(`You've entered invalid value. Please try again. \n
- What is you fav sport game? \n
- Leave this field empty if you don't want tell what's your fav sport`);
+        userFavSportInput = prompt(
+    `You've entered invalid value. Please try again. \n
+     What is you fav sport game? \n
+     Leave this field empty if you don't want tell what's your fav sport`);
     }
-
 } while (!isNaN(userFavSportInput));
 
 if (userFavSportInput === "") {
@@ -61,7 +66,6 @@ if (userFavSportInput === "") {
 //Calc age
 
 let userAgeResult;
-
 
 if ((userDateInput !== 0)) {
     const currentDate = new Date().getFullYear();
