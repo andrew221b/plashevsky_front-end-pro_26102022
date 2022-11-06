@@ -8,6 +8,7 @@
 
 let valid = false
 
+
 //Get user birth date.
 
 let userDateInput = Number(prompt
@@ -44,6 +45,8 @@ while (!valid) {
         alert("What a pity, you didn't add your city!")
         valid = true
     } else (valid = true)
+
+    
 }
 
 //Get user's fav sport
@@ -122,6 +125,8 @@ alert(finalInfo.join("\n"))
  * */ 
 
 // Get birth date
+
+alert('Here is another solution')
 
 let birthDate;
 let birthDateResult;
