@@ -32,12 +32,15 @@ while (isNaN(Number(taskNum))) {
     taskNum = prompt("You shall not pass! Enter the proper number");
 }
 
-switch (true) {
-    case taskNum === '': alert('You have entered nothing');
+switch (taskNum) {
+    case '':
+        alert('You have entered nothing');
         break;
-    case taskNum === null: alert('See you later');
+    case null:
+        alert('See you later');
         break;
-    default: alert('Ok, prepare to see the result')
+    default:
+        alert('Ok, prepare to see the result')
 }
 
 
