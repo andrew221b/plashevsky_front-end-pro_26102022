@@ -21,7 +21,7 @@ for (let i = 10; i <= 20; i++) {
     taskOneVariation.push(i);
 }
 
-console.log(taskOneVariation.join(","));
+console.log(taskOneVariation.join(", "));
 
 
 //2. Square numbers from 10 to 20
@@ -33,7 +33,7 @@ for (let i = 10; i <= 20; i++) {
     taskTwo.push(square)
 }
 
-console.log(taskTwo.join(","))
+console.log(taskTwo.join(", "))
 
 // Here I tried to use Math.pow method.
 
@@ -57,7 +57,7 @@ for (i = 1; i <= 10; i++) {
 let taskThree = []
 
 for (i = 1; i <= 10; i++) {
-    taskThree[i] = `${i} * 7 = ${i * 7}`
+    taskThree.push(`${i} * 7 = ${i * 7}`)
 }
 
 console.log(`${taskThree.join("\n")}`)
@@ -108,16 +108,15 @@ for (i = 15; i <= 35; i++) {
 console.log(BigInt(taskFive))
 
 
-// 6.Find average of numbers from 1 to 500
+//6.Find average of numbers from 1 to 500
 
-let taskSix = 0;
+let taskSix = [];
 
 for (i = 1; i <= 500; i++) {
-    taskSix += i
+    taskSix.push(i)
 }
 
-const taskSixAverage = taskSix / 500
-
+const taskSixAverage = taskSix.reduce((a, b) => a + b, 0) / taskSix.length;
 console.log(taskSixAverage)
 
 // More complex solution of task 6
@@ -172,7 +171,7 @@ for (i = 100; i <= 200; i++) {
     }
 }
 
-console.log(taskEight.join(","))
+console.log(taskEight.join(", "))
 
 
 /** 
@@ -223,7 +222,19 @@ for (let i = startTable; i <= endTable; i++) {
  *  but have a lack of knowledges to fully understand what's going on there :)
  */
 
+// Solution from dima
 
+ const startTabl = 1;
+ const endTabl = 10;
+ let result = [];
+ for (let i = startTabl; i <= endTabl; i++) {
+   let iArray = [];
+   for (let j = startTabl; j <= endTabl; j++) {
+     iArray.push(`${i} * ${j} = ${i * j}`);
+   }
+   result.push(iArray);
+ }
+ console.table(result);
 
 
 
