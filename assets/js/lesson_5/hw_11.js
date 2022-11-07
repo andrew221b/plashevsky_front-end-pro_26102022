@@ -121,11 +121,14 @@ for (i = 1; i <= 10; i++) {
     aiTurn = Math.floor(Math.random() * 3);
 
     switch (aiTurn) {
-        case 0: aiTurn = 'rock'
+        case 0: 
+        aiTurn = 'rock'
             break;
-        case 1: aiTurn = 'paper';
+        case 1: 
+        aiTurn = 'paper';
             break;
-        case 2: aiTurn = 'scissors';
+        case 2: 
+        aiTurn = 'scissors';
             break;
     }
 
