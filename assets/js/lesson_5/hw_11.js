@@ -6,7 +6,7 @@ for (i = 20; i <= 30; i += 0.5) {
     firstTask.push(i)
 }
 
-console.log(firstTask.join(','));
+console.log(firstTask.join(', '));
 
 // 2. Convert dollars to uah
 
