@@ -82,3 +82,113 @@ if (primeCheck) {
 }
 
 
+
+/**
+ * Decided to make a simple 'Rock, Paper, Scissors' game for practice.
+ *  Maybe with stupid decisions, but I tried :)
+ * There will be 10 rounds and alert with the scores and winner in the end
+ * I want from user to enter only three words, I tried make an array and use .some method.
+ * It would be great if you could help me with this :)
+ */
+
+let userCount = 0;
+let aiCount = 0;
+
+for (i = 1; i <= 10; i++) {
+
+    // Here we get inputs
+
+    let userTurn;
+    let userChoice;
+    let aiTurn;
+
+    userTurn = prompt(`Choose one: \n
+    Rock \n
+    Paper \n
+    Scissors`)
+
+    if (!userTurn || Number(userTurn)) {
+        while (!userTurn || Number(userTurn)) {
+            userTurn = prompt(`Enter valid value \n
+            Rock \n
+            Paper \n
+            Scissors`)
+        }
+    }
+
+    userChoice = userTurn.toLowerCase()
+
+    aiTurn = Math.floor(Math.random() * 3);
+
+    switch (aiTurn) {
+        case 0: aiTurn = 'rock'
+            break;
+        case 1: aiTurn = 'paper';
+            break;
+        case 2: aiTurn = 'scissors';
+            break;
+    }
+
+    // Here we calculate who is the winner and add scores
+
+    let gameRes = `You chose ${userChoice} \n
+        Computer chose ${aiTurn}`
+
+
+    if (aiTurn != userTurn) {
+        switch (true) {
+            case userChoice === 'rock':
+                if (aiTurn === 'paper') {
+                    alert(`${gameRes} \n 
+                You lose this round! \n`)
+                    ++aiCount
+                } else {
+                    alert(`${gameRes} \n 
+                You win this round! \n`)
+                    ++userCount
+                }
+                break;
+
+            case userChoice === 'paper':
+                if (aiTurn === 'scissors') {
+                    alert(`${gameRes} \n 
+                    You lose this round! \n`)
+                    ++aiCount
+                } else {
+                    alert(`${gameRes} \n 
+                    You win this round! \n`)
+                    ++userCount
+                }
+                break;
+
+            case userChoice === 'scissors':
+                if (aiTurn === 'rock') {
+                    alert(`${gameRes} \n 
+                    You lose this round! \n`)
+                    ++aiCount
+                } else {
+                    alert(`${gameRes} \n 
+                    You win this round! \n`)
+                    ++userCount
+                }
+                break;
+        }
+    } else {
+        alert(`${gameRes} \n
+        Tie!`)
+        ++aiCount
+        ++userCount
+    }
+}
+
+let totalScore = `Your scores: ${userCount} \n
+Computer scores: ${aiCount}`
+
+if (userCount > aiCount) {
+    alert(`${totalScore} \n
+    You win the game!`)
+} else if (userCount < aiCount) {
+    alert(`${totalScore} \n
+    You lose the game!`)
+} else (alert(`${totalScore} \n
+    Tie!`))
