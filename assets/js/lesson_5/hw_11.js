@@ -40,9 +40,12 @@ switch (true) {
     default: alert('Ok, prepare to see the result')
 }
 
-let taskThreeRes = [];
+
 
 if (Number(taskNum)) {
+
+    let taskThreeRes = [];
+
     for (var i = 1; i <= 100; i++) {
         if (i * i <= taskNum)
             taskThreeRes.push(i);
@@ -121,14 +124,14 @@ for (i = 1; i <= 10; i++) {
     aiTurn = Math.floor(Math.random() * 3);
 
     switch (aiTurn) {
-        case 0: 
-        aiTurn = 'rock'
+        case 0:
+            aiTurn = 'rock'
             break;
-        case 1: 
-        aiTurn = 'paper';
+        case 1:
+            aiTurn = 'paper';
             break;
-        case 2: 
-        aiTurn = 'scissors';
+        case 2:
+            aiTurn = 'scissors';
             break;
     }
 
@@ -138,49 +141,48 @@ for (i = 1; i <= 10; i++) {
         Computer chose ${aiTurn}`
 
 
-    if (aiTurn != userTurn) {
-        switch (true) {
-            case userChoice === 'rock':
-                if (aiTurn === 'paper') {
-                    alert(`${gameRes} \n 
+    switch (true) {
+        case userChoice === 'rock':
+            if (aiTurn === 'paper') {
+                alert(`${gameRes} \n 
                 You lose this round! \n`)
-                    ++aiCount
-                } else {
-                    alert(`${gameRes} \n 
+                ++aiCount
+            } else {
+                alert(`${gameRes} \n 
                 You win this round! \n`)
-                    ++userCount
-                }
-                break;
+                ++userCount
+            }
+            break;
 
-            case userChoice === 'paper':
-                if (aiTurn === 'scissors') {
-                    alert(`${gameRes} \n 
+        case userChoice === 'paper':
+            if (aiTurn === 'scissors') {
+                alert(`${gameRes} \n 
                     You lose this round! \n`)
-                    ++aiCount
-                } else {
-                    alert(`${gameRes} \n 
+                ++aiCount
+            } else {
+                alert(`${gameRes} \n 
                     You win this round! \n`)
-                    ++userCount
-                }
-                break;
+                ++userCount
+            }
+            break;
 
-            case userChoice === 'scissors':
-                if (aiTurn === 'rock') {
-                    alert(`${gameRes} \n 
+        case userChoice === 'scissors':
+            if (aiTurn === 'rock') {
+                alert(`${gameRes} \n 
                     You lose this round! \n`)
-                    ++aiCount
-                } else {
-                    alert(`${gameRes} \n 
+                ++aiCount
+            } else {
+                alert(`${gameRes} \n 
                     You win this round! \n`)
-                    ++userCount
-                }
-                break;
-        }
-    } else {
-        alert(`${gameRes} \n
-        Tie!`)
-        ++aiCount
-        ++userCount
+                ++userCount
+            }
+            break;
+        case userChoice === aiTurn:
+            alert(`${gameRes} \n
+                Tie!`)
+            ++aiCount
+            ++userCount
+            break
     }
 }
 
