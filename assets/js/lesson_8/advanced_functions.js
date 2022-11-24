@@ -160,7 +160,6 @@ const subArrLength = Number(prompt('Set length of sub array'))
 
 // Generate arrays and their elements
 
-
 /**
  * @param {number} parentArr 
  * @param {number} childArr 
@@ -171,9 +170,9 @@ function nestedArr(parentArr, childArr) {
     let arr = new Array(parentArr);
 
     for (var i = 0; i < parentArr; i++) {
-        const count = arr.forEach((currentCount, row) => currentCount + row.length);
+        const count = i + 1;
 
-        arr[i] = new Array(childArr).fill(0).map(i => i = prompt(`Set value in ${count} sub array`)); //make counter
+        arr[i] = new Array(childArr).fill(0).map(i => i = prompt(`Set value in ${count} sub array`));
     }
 
     return arr
@@ -182,7 +181,11 @@ function nestedArr(parentArr, childArr) {
 console.log(nestedArr(mainArrLength, subArrLength));
 
 
-// Tried to make smth with recursive func, to add the same element to all arrays
+/**
+ *  Tried to make smth with recursive func, to add the same element to all arrays
+ *  Don't judge this variant, because I just practiced here and still try to understand how it works )
+ *  It would be awesome if you show on next lesson, how to solve this task properly using recursion
+ * */
 
 const arrLength = Number(prompt('Set length of main array'))
 const innerArrLength = Number(prompt('Set length of sub array'))
@@ -221,11 +224,12 @@ console.log(myArray)
 
 const strInput = prompt('Enter smth')
 const delArr = []
+
 let delInput = true;
 
 while (delInput) {
     const chooseChartoDel = prompt(`Choose characters to delete from : ${strInput.toUpperCase()} \n
-    If you're finished press OK or Cancel`)
+    If you're finished, leave the field blank and press OK or Cancel`)
 
     if (chooseChartoDel) {
         delArr.push(chooseChartoDel)
@@ -243,17 +247,18 @@ while (delInput) {
  */
 
 const delChar = (input, del) => {
-    let res
     let compareAndDel = [...input]
 
     compareAndDel = compareAndDel.filter(val => !del.includes(val)).toString()
-    res = compareAndDel.split(',').join('')
+    let res = compareAndDel.split(',').join('')
+
     return res
 }
 
 console.log(delChar(strInput, delArr))
 
-// Another variant
+
+// Another variation
 
 const alternativeDelChar = (input, del) => {
     let arr = input.split('')
