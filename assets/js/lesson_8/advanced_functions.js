@@ -1,6 +1,6 @@
 // 1.FIND AVERAGE FUNCTION
 
-let arrayAverage = []
+let arrayAverage = [2, 3, 4]
 
 // This was my first decision
 /**
@@ -11,6 +11,7 @@ let arrayAverage = []
 function arrayAverageNum(arr) {
     const onlyNumArray = arr.filter(el => typeof el === "number")
     const result = onlyNumArray.reduce((a, b) => a + b, 0) / onlyNumArray.length
+
     return result
 }
 
@@ -28,6 +29,7 @@ let userInput = true;
 
 while (userInput) {
     const addElement = prompt('Add element to array. When it is done press "Cancel"')
+
     if (addElement) {
         arrayAverage.push(addElement)
     } else {
@@ -45,6 +47,7 @@ while (userInput) {
 function arrayAverageNum(arr) {
     const onlyNumArray = arr.filter(Number).map(Number)
     const result = onlyNumArray.reduce((a, b) => a + b, 0) / onlyNumArray.length
+
     return result
 }
 
@@ -60,8 +63,11 @@ console.log(arrayAverageNum(arrayAverage))
 
 function calculate(array) {
     const newArr = []
+
     array.forEach(e => parseInt(e) ? newArr.push(Number(e)) : newArr)
+
     const avg = newArr.reduce((a, b) => a + b, 0) / newArr.length
+
     return avg
 }
 
@@ -154,6 +160,7 @@ const subArrLength = Number(prompt('Set length of sub array'))
 
 // Generate arrays and their elements
 
+
 /**
  * @param {number} parentArr 
  * @param {number} childArr 
@@ -164,7 +171,9 @@ function nestedArr(parentArr, childArr) {
     let arr = new Array(parentArr);
 
     for (var i = 0; i < parentArr; i++) {
-        arr[i] = new Array(childArr).fill(0).map(i => i = prompt(`Set value in ${childArr} sub array`)); //make counter
+        const count = arr.forEach((currentCount, row) => currentCount + row.length);
+
+        arr[i] = new Array(childArr).fill(0).map(i => i = prompt(`Set value in ${count} sub array`)); //make counter
     }
 
     return arr
@@ -184,7 +193,7 @@ const fillElement = prompt('Set value to all array elements')
 /**
  * @param {number} arrSize 
  * @param {*} value 
- * @returns 
+ * @returns {array}
  */
 
 function makeArray(arrSize, value) {
@@ -206,3 +215,59 @@ function makeArray(arrSize, value) {
 var myArray = makeArray(bothArrLength, fillElement);
 
 console.log(myArray)
+
+
+// 4.MAKE FUNCTION TO DELETE VARIABLE ELEMENTS FROM STRING
+
+const strInput = prompt('Enter smth')
+const delArr = []
+let delInput = true;
+
+while (delInput) {
+    const chooseChartoDel = prompt(`Choose characters to delete from : ${strInput.toUpperCase()} \n
+    If you're finished press OK or Cancel`)
+
+    if (chooseChartoDel) {
+        delArr.push(chooseChartoDel)
+    } else {
+        delInput = false
+    }
+}
+
+/**
+ * I tried different solutions, but this is my favourite. Dk why )
+ * 
+ * @param {string} input 
+ * @param {array} del 
+ * @returns {string}
+ */
+
+const delChar = (input, del) => {
+    let res
+    let compareAndDel = [...input]
+
+    compareAndDel = compareAndDel.filter(val => !del.includes(val)).toString()
+    res = compareAndDel.split(',').join('')
+    return res
+}
+
+console.log(delChar(strInput, delArr))
+
+// Another variant
+
+const alternativeDelChar = (input, del) => {
+    let arr = input.split('')
+
+    for (i = 0; i < del.length; i++) {
+        arr = arr.filter(element => {
+            if (element !== del[i]) {
+                return element
+            }
+        })
+    }
+
+    const result = arr.join('')
+    return result
+}
+
+console.log(alternativeDelChar(strInput, delArr))
