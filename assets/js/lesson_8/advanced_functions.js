@@ -58,7 +58,7 @@ console.log(arrayAverageNum(arrayAverage))
  * Another one. I could use traditional if statement, but visualy I didn't like it :)
  * 
  * @param {string} array 
- * @returns {number} avg
+ * @returns {number}
  */
 
 function calculate(array) {
@@ -172,7 +172,7 @@ function nestedArr(parentArr, childArr) {
     for (var i = 0; i < parentArr; i++) {
         const count = i + 1;
 
-        arr[i] = new Array(childArr).fill(0).map(i => i = prompt(`Set value in ${count} sub array`));
+        arr[i] = new Array(childArr).fill(0).map(i => i = prompt(`Set values in ${count} sub array`));
     }
 
     return arr
