@@ -48,37 +48,37 @@ console.log(sortedArray)
 
 // Delete elements from 2 to 4
 
-// sortedArray.splice(1, 3)
+sortedArray.splice(1, 3)
 
-// console.log(sortedArray)
+console.log(sortedArray)
 
 
-// /**
-//  * Also I tried to use parseInt to convert numbers, without creating subarrays
-//  * */
+/**
+ * Also I tried to use parseInt to convert numbers, without creating subarrays
+ * */
 
-// let testArray = []
+let testArray = []
 
-// for (i = 1; i <= arrayLengthInput; i++) {
-//     const arrayElement = prompt(`${elementInputMsg} \n
-//     Elements left - ${counter--}`)
+for (i = 1; i <= arrayLengthInput; i++) {
+    const arrayElement = prompt(`${elementInputMsg} \n
+    Elements left - ${counter--}`)
 
-//     let convertToNum = parseInt(arrayElement, 10)
+    let convertToNum = parseInt(arrayElement, 10)
 
-//     if (!isNaN(Number(arrayElement))) {
-//         testArray.push(convertToNum)
-//     } else {
-//         testArray.push(arrayElement)
-//     }
-// }
+    if (!isNaN(Number(arrayElement))) {
+        testArray.push(convertToNum)
+    } else {
+        testArray.push(arrayElement)
+    }
+}
 
-// const sortedTestArr = testArray.slice().sort()
+const sortedTestArr = testArray.slice().sort()
 
-// console.log(testArray)
-// console.log(sortedTestArr)
+console.log(testArray)
+console.log(sortedTestArr)
 
-// // Splice sortedTestArr
+// Splice sortedTestArr
 
-// sortedTestArr.splice(1, 3)
+sortedTestArr.splice(1, 3)
 
-// console.log(sortedTestArr)
+console.log(sortedTestArr)
