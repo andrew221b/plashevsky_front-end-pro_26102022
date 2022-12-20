@@ -3,9 +3,11 @@ const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63,
 
 // 1. Find sum and quantity of positive numbers
 
+const showPositiveNum = (value) => value > 0
+
 const sumPositive = (array) => {
 
-    const arrFiltered = array.filter(value => value > 0)
+    const arrFiltered = array.filter(showPositiveNum)
     const sumPosArr = arrFiltered.reduce((a, b) => a + b,
         0)
     const result = `Quantity of positive values: ${arrFiltered.length} | Sum of positive values: ${sumPosArr}`
@@ -35,8 +37,10 @@ console.log(max(arr))
 
 // 4. Find quantity of negative numbers.
 
+const showNegativeNum = (value) => value < 0
+
 const negativeQuantity = (array) => {
-    const arrFiltered = array.filter(value => value < 0)
+    const arrFiltered = array.filter(showNegativeNum)
     return arrFiltered.length
 }
 
@@ -88,8 +92,13 @@ console.log(countValues(arr));
 
 // 5. Find quantity of odd positive elements
 
+const showOddNum = (num) => num % 2 !== 0
+
 const odd = (array) => {
-    const oddNumbers = array.filter(num => num % 2 !== 0 && num > 0)
+    const oddNumbers = array.filter((el) => {
+        return showOddNum(el) && showPositiveNum(el)
+    })
+
     return oddNumbers.length
 }
 
@@ -97,9 +106,13 @@ console.log(`Quantity of positive odd numbers: ${odd(arr)}`)
 
 // 6. Find quantity of even positive elements
 
+const showEvenNum = (num) => num % 2 === 0
 
 const even = (array) => {
-    const evenNumbers = array.filter(num => num % 2 === 0 && num > 0)
+    const evenNumbers = array.filter((el) => {
+        return showEvenNum(el) && showPositiveNum(el)
+    })
+
     return evenNumbers.length
 }
 
@@ -109,7 +122,7 @@ console.log(`Quantity of positive even numbers: ${even(arr)}`)
 
 const posOddEvenQuantity = (array) => {
     const obj = {}
-    const arrFiltered = array.filter(value => value > 0)
+    const arrFiltered = array.filter(showPositiveNum)
 
     obj.odd = arrFiltered.reduce((acc, element) => {return acc + element % 2}, 0)
     obj.even = arrFiltered.length - obj.odd;
@@ -121,7 +134,7 @@ console.log(posOddEvenQuantity(arr))
 // 7. Find sum of positive even elements
 
 const sumOfPosEven = (array) => {
-   return array.reduce((total, num) => (num > 0 && num % 2 === 0) ? total + num : total, 0)
+   return array.reduce((total, num) => (showPositiveNum(num) && showEvenNum(num)) ? total + num : total, 0)
 } 
 
 console.log(sumOfPosEven(arr))
@@ -129,15 +142,16 @@ console.log(sumOfPosEven(arr))
 // 8. Find sum of positive odd elements
 
 const sumOfPosOdd = (array) => {
-   return array.reduce((total, num) => (num > 0 && num % 2 !== 0) ? total + num : total, 0)
+   return array.reduce((total, num) => (showPositiveNum(num) && showOddNum(num)) ? total + num : total, 0)
 } 
 
 console.log(sumOfPosOdd(arr))
 
+
 // 9. Multiply all positive numbers
 
 const multOfPosOdd = (array) => {
-    return array.reduce((total, num) => (num > 0) ? total * num : total, 1)
+    return array.reduce((total, num) => (showPositiveNum(num)) ? total * num : total, 1)
  } 
 
  console.log(multOfPosOdd(arr))
